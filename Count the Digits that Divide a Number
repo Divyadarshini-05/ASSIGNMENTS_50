@@ -1,0 +1,20 @@
+class Solution {
+    public int countDigits(int num) {
+        int count = 0;
+        int temp = num;
+        
+        // Extract each digit and check divisibility
+        while (temp > 0) {
+            int digit = temp % 10;
+            
+            // Check if the digit divides the original number
+            if (num % digit == 0) {
+                count++;
+            }
+            
+            temp /= 10;
+        }
+        
+        return count;
+    }
+}
